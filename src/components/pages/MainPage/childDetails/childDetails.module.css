@@ -1,0 +1,78 @@
+
+.childDetailsContainer {
+  padding: 24px 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.value {
+  color: #222;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.fileButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: #fafafa;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 18px;
+}
+.folder_icon {
+  width: 22px;
+  height: 22px;
+}
+.dateSection {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+.dateField {
+
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.statusField {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+.statusInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  text-align: right;
+  background: #fafafa;
+  margin-bottom: 6px;
+}
+.sizeInfo {
+  font-size: 12px;
+  color: #888;
+  text-align: left;
+}

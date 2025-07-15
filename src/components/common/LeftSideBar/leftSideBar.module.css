@@ -1,0 +1,99 @@
+/* styles of sidebar open */
+.sidebarOpen {
+  width: 80px;
+  background: #f8fafd;
+  padding: 16px 0;
+  height: 100vh;
+  transition: width 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+/* styles of sidebar closed */
+.sidebarClosed {
+  width: 48px;
+  background: #f8fafd;
+  padding: 16px 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+
+/* styles of icons container */
+.iconsContainer {
+row-gap: 35px;
+  flex: 1;
+}
+
+
+/* styles of icon wrapper */
+.iconWrapper {
+  width: 29px;
+  height: 29px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.iconWrapper:hover {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 8px #e8eaed44;
+}
+
+
+/* styles of icon wrapper */
+.icon {
+  font-size: 28px;
+  color: #5f6368;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 8px;
+  padding: 6px;
+}
+.icon:hover {
+  background: #e8eaed;
+  color: #1a73e8;
+}
+
+
+/* styles of arrow button */
+.arrowButton {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #eee;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background 0.2s;
+}
+.arrowButton:hover {
+  background: #e8eaed;
+}
+
+
+/* styles of arrow button closed */
+.arrowButtonClosed {
+  background: #f4f6f8;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #e0e0e0;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.arrowButtonClosed:hover {
+  background: #f8fafd;
+  box-shadow: 0 4px 16px #e0e0e0;
+  width: 40px;
+  border-radius: 0px 20px 22px 0px;
+}
