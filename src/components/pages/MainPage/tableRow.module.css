@@ -1,0 +1,41 @@
+.owner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+.owner img {
+  width: 29px;
+  height: 29px;
+  border-radius: 100%;
+}
+.hovered_td {
+  position: relative;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  background-color: #e9eef6;
+  width: 350px;
+  gap: 4px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 20px 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.right_icon {
+  gap: 2px;
+}
+.left_side {
+  gap: 2px;
+}
+.hovered_td:hover .hidden {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

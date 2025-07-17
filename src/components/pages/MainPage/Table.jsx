@@ -8,13 +8,19 @@ const FileTable = ({ files, onMenuOpen }) => (
         <th>الاسم</th>
         <th>السبب المقترح</th>
         <th>المالك</th>
-        <th>التاريخ</th>
-        <th></th>
+        <th>الموقع</th>
+      
+      
       </tr>
     </thead>
     <tbody>
       {files.map((file, idx) => (
-        <FileTableRow key={file.name + idx} file={file} index={idx} onMenuOpen={onMenuOpen} />
+        <FileTableRow
+          key={file.name + idx}
+          file={file}
+          index={idx}
+          onMenuOpen={onMenuOpen}
+        />
       ))}
     </tbody>
   </table>

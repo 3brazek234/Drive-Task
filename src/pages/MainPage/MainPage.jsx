@@ -10,6 +10,7 @@ import { BsList } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import useFileStore from "../../store/useFileStore ";
 import Grid from "../../components/pages/MainPage/Grid";
+import { FaCheck } from "react-icons/fa";
 
 const MainPage = () => {
   const [view, setView] = useState("list");
@@ -50,16 +51,18 @@ const MainPage = () => {
             setSelectedFile(null);
             setDetailsOpen(true);
           }}
+          className={styles.info_icon}
         />
       </div>
       <div className={`${styles.sectionTitleContainer} between-row`}>
         <h2 className={styles.sectionTitle}>الملفات المقترحة</h2>
         <div className={styles.viewToggle}>
           <button
-            className={`center ${view === "list" ? styles.activeToggle : ""}`}
+            className={`center ${view === "grid" ? styles.activeToggle : ""}`}
             onClick={() => setView("grid")}
             aria-label="عرض شبكي"
           >
+            {view === "grid" && <FaCheck size={12} />}
             <MdApps />
           </button>
           <button
@@ -68,6 +71,7 @@ const MainPage = () => {
             aria-label="عرض قائمة"
           >
             <BsList />
+            {view === "list" && <FaCheck size={12} />}
           </button>
         </div>
       </div>
