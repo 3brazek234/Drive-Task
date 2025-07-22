@@ -1,0 +1,59 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 1.5rem;
+  position: relative;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: scale-in 0.3s forwards ease-in-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.closeButton {
+  color: #9ca3af;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+}
+
+.closeButton:hover {
+  color: #4b5563;
+}
+
+@keyframes scale-in {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

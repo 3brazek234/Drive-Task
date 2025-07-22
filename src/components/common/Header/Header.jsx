@@ -8,36 +8,67 @@ import {
   MdSettings,
 } from "react-icons/md";
 import userImg from "../../../assets/user.png";
+import useModelsStore from "../../../store/useModelsStore";
+import Models from "../../ui/Models";
+
+import { Select } from "../../ui/Select";
+import {
+  commentFilterOptions,
+  fileOptions,
+  modifiedDateOptions,
+  ownershipOptions,
+  sourceOptions,
+} from "../../../constants/constants";
+import Input from "../../ui/Input";
 
 const Header = () => {
+  const { toggle } = useModelsStore();
   return (
-    <header className={`${styles.header}`}>
-      <div className={styles.searchContainer}>
-        <MdFormatListBulleted className={styles.listIcon} />
-        <input className={styles.search} placeholder="البحث في Google Drive" />
-        <CiSearch className={styles.searchIcon} />
-      </div>
-      <div className={styles.left_side}>
-        <div className={styles.topIcons}>
-          <button>
-            <MdHelpOutline />
-          </button>
-          <button>
-            <MdSettings />
-          </button>
-          <button>
-            <MdAutoAwesome />
-          </button>
+    <>
+      <header className={`${styles.header}`}>
+        <div className={styles.searchContainer} onClick={toggle}>
+          <MdFormatListBulleted className={styles.listIcon} />
+          <input
+            className={styles.search}
+            placeholder="البحث في Google Drive"
+          />
+          <CiSearch className={styles.searchIcon} />
+        </div>
+        <div className={styles.left_side}>
+          <div className={styles.topIcons}>
+            <button>
+              <MdHelpOutline />
+            </button>
+            <button>
+              <MdSettings />
+            </button>
+            <button>
+              <MdAutoAwesome />
+            </button>
 
-          <button>
-            <MdApps />
-          </button>
+            <button>
+              <MdApps />
+            </button>
+          </div>
+          <div className={styles.profileContainer}>
+            <img src={userImg} alt="profile" className={styles.profileImg} />
+          </div>
         </div>
-        <div className={styles.profileContainer}>
-          <img src={userImg} alt="profile" className={styles.profileImg} />
-        </div>
-      </div>
-    </header>
+      </header>
+      <Models title="بحث متقدم">
+        <Select label="النوع" arr={fileOptions} />
+        <Select label="المالك" arr={ownershipOptions} />
+        <Input
+          label="يحتوي على الكلمات التالية"
+          placeholder="أدخل كلمات موجودة في الملف"
+        />
+        <Input label="اسم الملف" placeholder="أدخل عباره تطابق اسم الملف" />
+        <Select label="الموقع" arr={sourceOptions} />
+        <Select label="تاريخ التعديل" arr={modifiedDateOptions} />
+         <Input label="تمت المشاركه مع" placeholder="أدخل اسمااو عنوان بؤيد الكتروني" />
+         <Select  label="المتابعات" arr={commentFilterOptions} />
+      </Models>
+    </> 
   );
 };
 

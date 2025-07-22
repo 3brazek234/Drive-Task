@@ -18,7 +18,7 @@ const LeftSideBar = () => {
         } between-column`}
       >
         <div className={`${styles.iconsContainer} column`}>
-          {leftSidebarIcons.map((item, idx) => {
+          {leftSidebarIcons.map((item) => {
             const Icon = item.icon;
             return (
               <span

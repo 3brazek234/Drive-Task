@@ -17,7 +17,6 @@ import logo from "../../../assets/logo.webp";
 import { FaList } from "react-icons/fa6";
 
 const SideBar = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const icons = {
     FaHome,

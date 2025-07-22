@@ -1,0 +1,26 @@
+.field {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 15px;
+}
+
+.field label {
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: right;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #bfc8d6;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.input:focus {
+  border-color: #0b57d0;
+}
