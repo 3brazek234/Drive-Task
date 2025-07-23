@@ -14,13 +14,50 @@ import Models from "../../ui/Models";
 import { Select } from "../../ui/Select";
 import {
   commentFilterOptions,
-  fileOptions,
   googleApps,
   modifiedDateOptions,
   ownershipOptions,
   sourceOptions,
 } from "../../../constants/constants";
 import Input from "../../ui/Input";
+const fileOptions = [
+  {
+    label: "صور فوتوغرافية",
+    value: "images",
+  },
+  {
+    label: "ملفات PDF",
+    value: "pdf",
+  },
+  {
+    label: "المستندات",
+    value: "docs",
+  },
+  {
+    label: "جداول البيانات",
+    value: "sheets",
+  },
+  {
+    label: "العروض التقديمية",
+    value: "slides",
+  },
+  {
+    label: "نماذج",
+    value: "forms",
+  },
+  {
+    label: "صوت",
+    value: "audio",
+  },
+  {
+    label: "الفيديوهات",
+    value: "video",
+  },
+  {
+    label: "أرشيفات (zip)",
+    value: "archive",
+  },
+];
 
 const Header = () => {
   const toggle = useModelsStore((state) => state.toggle);

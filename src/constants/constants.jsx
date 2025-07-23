@@ -67,44 +67,6 @@ export const menuOptions = [
   { label: "Delete", icon: "🗑️" },
 ];
 
-export const fileOptions = [
-  {
-    label: "صور فوتوغرافية",
-    value: "images",
-  },
-  {
-    label: "ملفات PDF",
-    value: "pdf",
-  },
-  {
-    label: "المستندات",
-    value: "docs",
-  },
-  {
-    label: "جداول البيانات",
-    value: "sheets",
-  },
-  {
-    label: "العروض التقديمية",
-    value: "slides",
-  },
-  {
-    label: "نماذج",
-    value: "forms",
-  },
-  {
-    label: "صوت",
-    value: "audio",
-  },
-  {
-    label: "الفيديوهات",
-    value: "video",
-  },
-  {
-    label: "أرشيفات (zip)",
-    value: "archive",
-  },
-];
 
 export const ownershipOptions = [
   { value: "any", label: "أي شخص" },
