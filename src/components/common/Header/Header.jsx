@@ -15,6 +15,7 @@ import { Select } from "../../ui/Select";
 import {
   commentFilterOptions,
   fileOptions,
+  googleApps,
   modifiedDateOptions,
   ownershipOptions,
   sourceOptions,
@@ -22,12 +23,15 @@ import {
 import Input from "../../ui/Input";
 
 const Header = () => {
-  const { toggle } = useModelsStore();
+  const toggle = useModelsStore((state) => state.toggle);
   return (
     <>
       <header className={`${styles.header}`}>
-        <div className={styles.searchContainer} onClick={toggle}>
-          <MdFormatListBulleted className={styles.listIcon} />
+        <div className={styles.searchContainer}>
+          <MdFormatListBulleted
+            className={styles.listIcon}
+            onClick={() => toggle("search")}
+          />
           <input
             className={styles.search}
             placeholder="البحث في Google Drive"
@@ -47,7 +51,7 @@ const Header = () => {
             </button>
 
             <button>
-              <MdApps />
+              <MdApps onClick={() => toggle("list")} />
             </button>
           </div>
           <div className={styles.profileContainer}>
@@ -55,7 +59,14 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <Models title="بحث متقدم">
+      <Models
+        title="بحث متقدم"
+        id="search"
+        width="70%"
+        height="500px"
+        tranlateX="-50%"
+        translateY="-50%"
+      >
         <Select label="النوع" arr={fileOptions} />
         <Select label="المالك" arr={ownershipOptions} />
         <Input
@@ -65,10 +76,40 @@ const Header = () => {
         <Input label="اسم الملف" placeholder="أدخل عباره تطابق اسم الملف" />
         <Select label="الموقع" arr={sourceOptions} />
         <Select label="تاريخ التعديل" arr={modifiedDateOptions} />
-         <Input label="تمت المشاركه مع" placeholder="أدخل اسمااو عنوان بؤيد الكتروني" />
-         <Select  label="المتابعات" arr={commentFilterOptions} />
+        <Input
+          label="تمت المشاركه مع"
+          placeholder="أدخل اسمااو عنوان بؤيد الكتروني"
+        />
+        <Select label="المتابعات" arr={commentFilterOptions} />
+        <div className={`${styles.foot} between-row`}>
+          <div>
+            <p>مزيد من المعلومات</p>
+          </div>
+          <div className={`${styles.btns} center`}>
+            <p>اعاده الضبط</p>
+            <button>بحث</button>
+          </div>
+        </div>
       </Models>
-    </> 
+      <Models
+        align="flex-end"
+        valign="flex-start"
+        id="list"
+        width="30%"
+        height="400px"
+      >
+        <div className={styles.grid}>
+          {googleApps.map(({ value, label, icon: Icon, color }) => (
+            <button key={value} className={styles.item}>
+              <div className={styles.iconWrap} style={{ color }}>
+                <Icon size={32} />
+              </div>
+              <span className={styles.label}>{label}</span>
+            </button>
+          ))}
+        </div>
+      </Models>
+    </>
   );
 };
 

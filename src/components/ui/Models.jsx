@@ -5,21 +5,21 @@ import { IoMdClose } from "react-icons/io";
 const Models = ({
   children,
   title,
-  /**
-   * align: 'center' | 'flex-start' | 'flex-end'
-   * valign: 'center' | 'flex-start' | 'flex-end'
-   */
   align = "center",
   valign = "center",
+  width,
+  height,
+  id,
 }) => {
-  const { isOpen, toggle } = useModelsStore();
+  const { toggle } = useModelsStore();
+  const isOpen = useModelsStore((s) => !!s.modals[id]);
 
   if (!isOpen) return null;
 
   return (
     <div
       className={styles.main_cont}
-      onClick={toggle} // إغلاق عند الضغط على الخلفية
+      onClick={() => toggle(id)}
       style={{
         justifyContent: align,
         alignItems: valign,
@@ -27,11 +27,15 @@ const Models = ({
     >
       <div
         className={styles.model}
-        onClick={(e) => e.stopPropagation()} // لمنع إغلاق عند الضغط داخل المودال
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: width,
+          height: height,
+        }}
       >
         <div className={`${styles.header} between-row`}>
           <h6>{title}</h6>
-          <div className={styles.close_icon} onClick={toggle}>
+          <div className={styles.close_icon} onClick={() => toggle(id)}>
             <IoMdClose />
           </div>
         </div>

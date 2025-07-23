@@ -1,8 +1,11 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-const useModelsStore = create((set) => ({
-  isOpen: false,
-  toggle: () => set((s) => ({ isOpen: !s.isOpen })),
+const useModalsStore = create((set) => ({
+  modals: {},
+  toggle: (id) =>
+    set((s) => ({
+      modals: { ...s.modals, [id]: !s.modals[id] },
+    })),
 }));
 
-export default useModelsStore;
+export default useModalsStore;
